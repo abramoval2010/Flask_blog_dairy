@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Мой блог - Достижения и навыки{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <header>
+        <h1>✨ Мой путь в IT: Достижения и навыки ✨</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('blog') }}">🏠 Главная</a></li>
+                <li><a href="{{ url_for('blog') }}#about">👤 Обо мне</a></li>
+                <li><a href="{{ url_for('blog') }}#achievements">🏆 Достижения</a></li>
+                <li><a href="{{ url_for('blog') }}#skills">📚 Навыки</a></li>
+                <li><a href="{{ url_for('blog') }}#progress">📊 Прогресс</a></li>
+                <li><a href="{{ url_for('notes') }}">📔 Дневник</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2026 Александр | Мой блог о достижениях в IT</p>
+        <address>Связь со мной: <a href="mailto:abramoval@yandex.ru">abramoval@yandex.ru</a></address>
+        <small>Последнее обновление: май 2026</small>
+    </footer>
+</body>
+</html>

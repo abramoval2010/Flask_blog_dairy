@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+
+{% block title %}Главная - Мой блог о достижениях{% endblock %}
+
+{% block content %}
+    <!-- Секция "Обо мне" -->
+    <section id="about" class="about-section">
+        <h2>Привет! 👋</h2>
+        <div class="about-content">
+            <img src="{{ url_for('static', filename='images/avatar.jpg') }}"
+                 alt="Мое фото или иллюстрация" 
+                 class="profile-img">
+            <div class="about-text">
+                <p>Меня зовут Александр, и я начинающий Python-разработчик. За последние <strong>6 месяцев</strong> я освоил множество технологий и продолжаю расти каждый день!</p>
+                <p>Моя цель — стать Full-stack разработчиком и создавать полезные веб-приложения. Этот блог — отражение моего прогресса и достижений.</p>
+                <blockquote>"Успех — это сумма маленьких усилий, повторяемых день за днем."</blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Достижения" - ДАТЫ ОБНОВЛЕНЫ -->
+    <section id="achievements" class="achievements-section">
+        <h2>🏆 Мои главные достижения</h2>
+        <div class="achievements-grid">
+            <article class="achievement-card">
+                <img src="{{ url_for('static', filename='images/python.png') }}"
+                     style="width: 50px; height: 50px;">
+                <h3>Завершил курс «Python для начинающих»</h3>
+                <p>Изучил основы, функции, ООП, модули и работу с файлами.</p>
+                <time datetime="2026-03">Март 2026</time>
+            </article>
+            <article class="achievement-card">
+                <img src="{{ url_for('static', filename='images/flask.png') }}"
+                     style="width: 50px; height: 50px;">
+                <h3>Создал первое Flask приложение</h3>
+                <p>Разработал простой блог с маршрутизацией и шаблонами.</p>
+                <time datetime="2026-05">Май 2026</time>
+            </article>
+            <article class="achievement-card">
+                <img src="{{ url_for('static', filename='images/html.png') }}"
+                     style="width: 50px; height: 50px;">
+                <h3>Освоил основы HTML/CSS</h3>
+                <p>Научился верстать адаптивные страницы и применять стилизацию.</p>
+                <time datetime="2026-05">Май 2026</time>
+            </article>
+        </div>
+    </section>
+
+    <!-- Секция "Навыки" -->
+    <section id="skills" class="skills-section">
+        <h2>📚 Мои навыки</h2>
+        <div class="skills-list">
+            <div class="skill-item">
+                <span class="skill-name">Python</span>
+                <progress value="85" max="100"></progress>
+                <span class="skill-percent">85%</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">Flask</span>
+                <progress value="75" max="100"></progress>
+                <span class="skill-percent">75%</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">HTML/CSS</span>
+                <progress value="70" max="100"></progress>
+                <span class="skill-percent">70%</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-name">Git</span>
+                <progress value="60" max="100"></progress>
+                <span class="skill-percent">60%</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Прогресс" с таблицей -->
+    <section id="progress" class="progress-section">
+        <h2>📊 Таблица прогресса обучения</h2>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        {% for discipline in disciplines %}
+                        <th>{{ discipline.name }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Строка: процент выполнения темы -->
+                    <tr>
+                        {% for discipline in disciplines %}
+                        <td class="progress-cell">{{ discipline.progress }}</td>
+                        {% endfor %}
+                    </tr>
+                    <!-- Строка: процент выполнения домашнего задания -->
+                    <tr>
+                        {% for discipline in disciplines %}
+                        <td class="homework-cell">{{ discipline.homework }}</td>
+                        {% endfor %}
+                    </tr>
+                    <!-- Строка: комментарии -->
+                    <tr>
+                        {% for discipline in disciplines %}
+                        <td class="comment-cell">{{ discipline.comments }}</td>
+                        {% endfor %}
+                    </tr>
+                    <!-- Дополнительная 4 строка: статус -->
+                    <tr>
+                        <td>✅ Активно</td>
+                        <td>✅ Активно</td>
+                        <td>✅ Активно</td>
+                        <td>🟡 В процессе</td>
+                        <td>🟡 В процессе</td>
+                        <td>⚪ Запланировано</td>
+                        <td>⚪ Запланировано</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="table-note">* Данные по первым трем темам полностью заполнены, остальные - в процессе изучения.</p>
+    </section>
+{% endblock %}

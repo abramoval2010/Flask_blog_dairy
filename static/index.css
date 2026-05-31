@@ -1,0 +1,696 @@
+/* Общие стили и сброс */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Задний фон сайта - градиент */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    min-height: 100vh;
+}
+
+main {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Шапка и навигация */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.2em;
+    color: #667eea;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #764ba2;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #667eea;
+}
+
+/* Секции */
+section {
+    background: white;
+    border-radius: 15px;
+    margin: 30px 0;
+    padding: 30px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+h2 {
+    font-size: 2em;
+    color: #764ba2;
+    margin-bottom: 20px;
+    border-left: 5px solid #667eea;
+    padding-left: 15px;
+}
+
+/* Секция "Обо мне" */
+.about-content {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.profile-img {
+    width: 300px;
+    height: 200px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.1em;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+blockquote {
+    font-style: italic;
+    color: #667eea;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border-left: 3px solid #764ba2;
+    background: #f9f9ff;
+}
+
+/* Достижения - сетка */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.achievement-card {
+    background: #f9f9ff;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+}
+
+.achievement-card h3 {
+    font-size: 1.3em;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+.achievement-card p {
+    font-size: 0.95em;
+    margin: 10px 0;
+}
+
+.achievement-card time {
+    font-size: 0.85em;
+    color: #888;
+}
+
+/* Навыки */
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.skill-name {
+    width: 100px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+progress {
+    flex: 1;
+    height: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #667eea;
+    border-radius: 10px;
+}
+
+.skill-percent {
+    width: 45px;
+    font-weight: bold;
+}
+
+/* Таблица */
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    min-width: 700px;
+}
+
+th {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 1em;
+    border: 1px solid #ddd;
+}
+
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.progress-cell {
+    background-color: #e8f5e9;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.homework-cell {
+    background-color: #e3f2fd;
+    font-weight: bold;
+    color: #1565c0;
+}
+
+.comment-cell {
+    background-color: #fff3e0;
+    text-align: left;
+    font-size: 0.85em;
+}
+
+tr:last-child td {
+    background-color: #f5f5f5;
+    font-weight: 500;
+}
+
+.table-note {
+    margin-top: 15px;
+    font-size: 0.85em;
+    color: #666;
+    font-style: italic;
+}
+
+/* Подвал */
+footer {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+footer a {
+    color: #667eea;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p, footer address, footer small {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+/* ===== СТИЛИ ДЛЯ ДНЕВНИКА ===== */
+
+.notes-section {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.notes-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #667eea;
+}
+
+/* Форма добавления записи */
+.add-note-form {
+    background: #f9f9ff;
+    padding: 25px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.add-note-form h3 {
+    color: #667eea;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #764ba2;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+/* Сообщения */
+.message {
+    margin-top: 20px;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.message.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+/* Список записей */
+.notes-list h3 {
+    color: #764ba2;
+    margin-bottom: 20px;
+    font-size: 1.4em;
+}
+
+.entries-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.note-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
+}
+
+.note-header h4 {
+    color: #667eea;
+    font-size: 1.2em;
+    margin: 0;
+    flex: 1;
+}
+
+.delete-btn {
+    color: #dc3545;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 0 5px;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.delete-btn:hover {
+    transform: scale(1.1);
+    color: #c82333;
+}
+
+.note-content {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.note-content p {
+    margin: 0;
+    word-wrap: break-word;
+}
+
+.note-footer {
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    color: #999;
+    font-size: 0.85em;
+}
+
+/* Обновленные стили для пустого состояния */
+
+.empty-notes {
+    text-align: center;
+    padding: 60px 30px;
+    background: linear-gradient(135deg, #f9f9ff 0%, #f0f0ff 100%);
+    border-radius: 15px;
+    color: #999;
+}
+
+.empty-notes-icon {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.6;
+}
+
+.empty-notes h3 {
+    color: #667eea;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.empty-notes p {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    color: #888;
+}
+
+.empty-notes-hint {
+    font-size: 0.9em !important;
+    color: #aaa !important;
+    margin-top: 15px;
+    font-style: italic;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .profile-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .skill-name {
+        width: 80px;
+        font-size: 0.9em;
+    }
+
+    th, td {
+        font-size: 0.8em;
+        padding: 6px;
+    }
+
+    .comment-cell {
+        font-size: 0.75em;
+    }
+
+    .entries-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .note-header h4 {
+        font-size: 1em;
+    }
+
+    .add-note-form {
+        padding: 15px;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+}
+/* Дополнительные стили для дневника с датами */
+
+.note-date {
+    color: #667eea;
+    font-size: 0.9em;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px dashed #e0e0e0;
+    font-weight: 500;
+}
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #667eea;
+}
+
+.note-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn {
+    color: #28a745;
+    text-decoration: none;
+    font-size: 1.3em;
+    padding: 0 5px;
+    transition: transform 0.2s;
+    display: inline-block;
+}
+
+.edit-btn:hover {
+    transform: scale(1.1);
+    color: #218838;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.cancel-btn {
+    background: #6c757d;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background 0.2s;
+    display: inline-block;
+}
+
+.cancel-btn:hover {
+    background: #5a6268;
+}
+
+/* Стиль для поля date */
+input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit;
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .form-buttons {
+        flex-direction: column;
+    }
+
+    .cancel-btn, .submit-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* Статистика и индикаторы */
+
+.stats-bar {
+    display: flex;
+    gap: 20px;
+    background: #f0f0ff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: #764ba2;
+}
+
+.stat-value {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #667eea;
+}
+
+.list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.sort-indicator {
+    background: #e8f5e9;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    color: #2e7d32;
+    font-weight: 500;
+}
+
+.form-hint {
+    display: block;
+    font-size: 0.8em;
+    color: #888;
+    margin-top: 5px;
+}
+
+.badge-new {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.7em;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.badge-old {
+    background: #ff9800;
+    color: white;
+    font-size: 0.7em;
+    padding: 2px 8px;
+    border-radius: 12px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+/* Анимация для карточек при сортировке */
+.note-card {
+    transition: all 0.3s ease;
+}
+
+.note-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
